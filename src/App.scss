@@ -26,7 +26,7 @@ $animate-value:color-change 6s infinite;
   }
 }
 
-@include keyframes(bgcolor){
+@include keyframes(color-change){
   0% { color: red; }
   50% { color: green; }
   100% { color: blue; }
