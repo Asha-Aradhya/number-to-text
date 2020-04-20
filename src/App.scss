@@ -1,0 +1,93 @@
+$animate-value:color-change 6s infinite;
+
+@mixin animate($x) {
+  -webkit-animation: $x;
+  -moz-animation: $x;
+  -o-animation: $x;
+  -ms-animation: $x;
+  animation: $x;
+}
+
+@mixin keyframes($name){
+  @-webkit-keyframes #{$name}{
+    @content;
+  }
+  @-moz-keyframes #{$name}{
+    @content;
+  }
+  @-ms-keyframes #{$name}{
+    @content;
+  }
+  @-o-keyframes #{$name}{
+    @content;
+  }
+  @keyframes #{$name} {
+    @content
+  }
+}
+
+@include keyframes(bgcolor){
+  0% { color: red; }
+  50% { color: green; }
+  100% { color: blue; }
+}
+
+body{
+  background-color:#f7c8c8;
+}
+
+h2 {
+  text-align:center;
+  @include animate($animate-value);
+}
+
+output {
+  color:green;
+  font-weight:bold;
+}
+
+.body {
+  background: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+  height: 47%;
+  border: 5px solid #007bff;
+  @media only screen and (max-width:600px){
+    width:80%;
+    height:50%;
+  }
+  form {
+    padding:2%;
+    text-align:center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width:100%;
+    label {
+      font-weight:700;
+      font-size:18px;
+    }
+    input {
+      padding:2%;
+      outline: 1px solid grey;
+    }
+  }
+}
+
+.show{
+  display:block;
+}
+
+.hide{
+  display:none;
+}
+
+div.show{
+  color:red;
+  font-weight: bold;
+}
+
