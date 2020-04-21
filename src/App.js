@@ -27,7 +27,7 @@ class App extends React.Component {
       this.setState({ inputvalue: val, errormessage: err });
     }
   }
-  //check if the number entered is bigger than sextillion
+  //check if the number entered is bigger than 99999
   checkForMaxNumber(val) {
     let len = val.length;
     let inputval = +val;    
