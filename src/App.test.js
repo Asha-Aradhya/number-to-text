@@ -39,9 +39,9 @@ describe('quantity input', () => {
     wrapperoutput = wrapper.find(Output);
     expect(wrapperoutput.props().outputvalue).toBe("Zero");;
   });  
-  it('Number great than sextillion', () => { 
-    wrapper.find('#inVal').simulate('change',{target: {value:'1234567891234567891234567'}});       
-    expect(wrapper.state('errormessage')).toBe("Number greater than sextillion is not supported");;
+  it('Number great than 100000', () => { 
+    wrapper.find('#inVal').simulate('change',{target: {value:'100000'}});       
+    expect(wrapper.state('errormessage')).toBe("Number greater than 99,999 is not supported");;
   });
   it('Test Output component for props value "inputvalue"', () => { 
     wrapper.find('#inVal').simulate('change',{target: {value:12345}});       
