@@ -36,8 +36,8 @@ class App extends React.Component {
       arr.push(val % 1000);
       val = parseInt(val / 1000, 10);
     }
-    if (len > 24) {
-      this.setState({ inputvalue: val, errormessage: "Number greater than sextillion is not supported" });
+    if (len > 5) {
+      this.setState({ inputvalue: val, errormessage: "Number greater than 99,999 is not supported" });
     } else {
       this.convertNumberToText(inputval, arr)
     }
@@ -49,7 +49,7 @@ class App extends React.Component {
     let digitsToWords = {
       ones: ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'],
       tens: ['', '', 'twenty', 'thirty', 'fourty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
-      int_sys: ['', ' thousand ', ' million ', ' billion ', ' trillion ', ' quadrillion ', ' quintillion ', ' sextillion ']
+      int_sys: ['', ' thousand ']
     };
     let finalvalue = '';
 
